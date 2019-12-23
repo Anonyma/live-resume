@@ -3,6 +3,7 @@ require(`dotenv`).config({
 })
 
 module.exports = {
+  pathPrefix: "/live-resume",
   siteMetadata: {
     siteTitleAlt: `Live resume`,
   },
