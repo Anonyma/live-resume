@@ -3,9 +3,14 @@ require(`dotenv`).config({
 })
 
 module.exports = {
-  pathPrefix: "/live-resume",
+  pathPrefix: "/test-gatsby-resume",
   siteMetadata: {
-    siteTitleAlt: `Live resume`,
+    siteTitle: `Live resume (@Anonyma_z)`,
+    siteTitleAlt: `Live resume (@Anonyma_z)`,
+    siteUrl: `https://anonyma.github.io/test-gatsby-resume`,
+    siteDescription: `Live resume for @Anonyma / @Anonyma_z`,
+    siteImage: `pixel_portrait.png`,
+    author: `@Anonyma_z`
   },
   plugins: [
     {
@@ -28,18 +33,7 @@ module.exports = {
         background_color: `#141821`,
         theme_color: `#f6ad55`,
         display: `standalone`,
-        icons: [
-          {
-            src: `/android-chrome-192x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-          },
-          {
-            src: `/android-chrome-512x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
+        icon: `src/images/pixel_portrait.png`,
       },
     },
     `gatsby-plugin-offline`,
