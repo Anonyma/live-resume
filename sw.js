@@ -26,20 +26,20 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-f8fbcd0ab19ea2ad3946.js"
+    "url": "webpack-runtime-808c27f11a23eceb5f27.js"
   },
   {
     "url": "commons-549c24a093027ad17843.js"
   },
   {
-    "url": "app-bc23477360ead35ddf85.js"
+    "url": "app-d91bc73feecc63d49060.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-6cc37212ef529ca81b4e.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "091f67b0427bf5a00f003d9668d085a5"
+    "revision": "00ec789aea301eb507afc6663de9b3da"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -70,12 +70,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/live-resume`), ``)
+  pathname = pathname.replace(new RegExp(`^/test-gatsby-resume`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/live-resume/app-bc23477360ead35ddf85.js`))) {
+  if (!resources || !(await caches.match(`/test-gatsby-resume/app-d91bc73feecc63d49060.js`))) {
     return await fetch(event.request)
   }
 
@@ -88,7 +88,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/live-resume/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/test-gatsby-resume/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
